@@ -34,7 +34,7 @@ Para terminar o programa, será necessário decidir um critério para fazê-lo p
 
 Jamille Bodeo - RA 125111357203
 <br>
-Paloma Regis Ferreira RA
+Paloma Regis Ferreira - RA 125111368062
 <br>
 Leonardo David Rodrigues RA 125111359837
 <br>

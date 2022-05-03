@@ -1,5 +1,7 @@
 package util;
 
-public class Requisicao {
+import java.io.Serializable;
+
+public class Requisicao implements Serializable {
     
 }

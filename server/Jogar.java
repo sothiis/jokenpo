@@ -1,13 +1,14 @@
 package server;
 
 import java.net.Socket;
+import java.util.Scanner;
 
 import util.Comunicacao;
 import util.Requisicao;
 import util.Resposta;
 
 public class Jogar extends Thread {
-
+    Scanner input = null;
     Socket socket;
     Comunicacao comunicacao;
 
@@ -26,6 +27,7 @@ public class Jogar extends Thread {
                 /*Tesoura ganha do papel (cortando-o).*/
        
                 /*Papel ganha da pedra(embrulhando-a).*/
+                input.close();
              break;
         }
     }

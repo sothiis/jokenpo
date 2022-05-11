@@ -32,16 +32,12 @@ public class ThreadJogadorVsJogador extends Thread{
             String nome1;
             String msg2;
             String nome2;
-            while(true) {
+
                 msg1 = input.nextLine(); //uso scanner para ler um texto e guardo dentro dessa variavel
                 nome1 = input.nextLine();
 
                 msg2 = input.nextLine();
                 nome2 = input.nextLine();
-
-//                Random random = new Random();
-//                int numero = (random.nextInt(3)) + 1; //+1 pq se inicia em zero
-//                String CPU = String.valueOf(numero); //convertendo um inteiro para String
 
                 if(msg1.equalsIgnoreCase("1") && msg2.equalsIgnoreCase("2") || msg1.equalsIgnoreCase("2") && msg2.equalsIgnoreCase("3") || msg1.equalsIgnoreCase("3") && msg2.equalsIgnoreCase("1")) {
                     //CPU vence
@@ -53,8 +49,7 @@ public class ThreadJogadorVsJogador extends Thread{
                     output.println("Empatou");
                 }
 
-                //System.out.println("Mensagem recebida: " + msg); seria a escolha do Cliente para o Jokenpo
-            }
+
 
         }catch (Exception e) {
             System.out.println(e.getMessage());

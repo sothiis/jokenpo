@@ -34,7 +34,7 @@ public class ThreadCpu extends Thread{
             output = new PrintStream(cliente.getOutputStream()); //para escrever no canal de comunicação do cliente
 
             String msg;
-            while(true) {
+
                 msg = input.nextLine(); //uso scanner para ler um texto e guardo dentro dessa variavel
 
                 Random random = new Random();
@@ -50,9 +50,6 @@ public class ThreadCpu extends Thread{
                 }else {
                     output.println("CPU jogou: " + CPU + ". Empatou");
                 }
-
-                //System.out.println("Mensagem recebida: " + msg); seria a escolha do Cliente para o Jokenpo
-            }
 
         }catch (Exception e) {
             System.out.println(e.getMessage());

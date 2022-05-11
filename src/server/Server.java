@@ -40,12 +40,10 @@ public class Server {
                 msg = input.nextLine();
 
                 if(msg.equalsIgnoreCase("1")) {
-                    System.out.println("teste1");
                     ThreadCpu threadCpu = new ThreadCpu(clientSocket, threads);
                     threads.add(threadCpu); //adicionando a lista de Cliente vs CPU
                     threadCpu.start(); //thread não entra em execução se não for iniciada, por isso o Start
                 }else if(msg.equals("2")){
-                    System.out.println("Entrou na opção 2");
                     ThreadJogadorVsJogador threadJogadorVsJogador = new ThreadJogadorVsJogador(clientSocket, threadJogadores);
                     threadJogadores.add(threadJogadorVsJogador); //adicionando para a lista da Thread de Jogador vs Jogador
                     threadJogadorVsJogador.start();

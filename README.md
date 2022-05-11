@@ -36,6 +36,6 @@ Jamille Bodeo - RA 125111357203
 <br>
 Paloma Regis Ferreira - RA 125111368062
 <br>
-Leonardo David Rodrigues RA 125111359837
+Leonardo David Rodrigues - RA 125111359837
 <br>
-Carlos Daniel RA
+Carlos Daniel Santos Oliveira - RA 125111352003

@@ -1,4 +1,4 @@
-package chat.threads;
+package src.threads;
 
 import java.io.PrintStream;
 import java.net.Socket;
@@ -43,12 +43,12 @@ public class ThreadCpu extends Thread{
 
                 if(msg.equalsIgnoreCase("1") && CPU.equalsIgnoreCase("2") || msg.equalsIgnoreCase("2") && CPU.equalsIgnoreCase("3") || msg.equalsIgnoreCase("3") && CPU.equalsIgnoreCase("1")) {
                     //CPU vence
-                    output.println("CPU venceu >8===D");
+                    output.println("CPU jogou: " + CPU + ". CPU venceu >8===D");
                 }else if(CPU.equalsIgnoreCase("1") && msg.equalsIgnoreCase("2") || CPU.equalsIgnoreCase("2") && msg.equalsIgnoreCase("3") || CPU.equalsIgnoreCase("3") && msg.equalsIgnoreCase("1")) {
                     //Usuário VENCEU da CPU
-                    output.println("Você venceu");
+                    output.println("CPU jogou: " + CPU + ". Você venceu");
                 }else {
-                    output.println("Empate");
+                    output.println("CPU jogou: " + CPU + ". Empatou");
                 }
 
                 //System.out.println("Mensagem recebida: " + msg); seria a escolha do Cliente para o Jokenpo

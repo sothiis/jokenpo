@@ -1,4 +1,7 @@
-package src.client.server;
+package src.server;
+
+import src.threads.ThreadCpu;
+import src.threads.ThreadJogadorVsJogador;
 
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -28,7 +31,7 @@ public class Server {
         try {
             while (true) {
                 System.out.println("Sistema aguardando pedido de conexão para iniciar o jogo...");
-                clientSocket = serverSocket.accept(
+                clientSocket = serverSocket.accept();
                 System.out.println("O jogo se conectou com: " + clientSocket.getInetAddress().getHostAddress());
 
                 //Para direcionar para a thread certa de acordo com a escolha de jogo

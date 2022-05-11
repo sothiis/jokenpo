@@ -7,9 +7,10 @@ import java.util.Scanner;
 public class Cliente {
     public static void main(String[] args) {
 
-        //getOutput-> para escrever no canal de comunicação / getInputStream -> para entrada de dados
-
         //VARIÁVEIS
+        final String IP = "127.0.0.1"; //ip do host pessoal
+        final int PORT = 9876; //porta do SERVER que quer se conectar
+        Socket socket; //usado do lado do cliente para se comunicar com o servidor
         PrintStream output = null;  //system.OUT.println -> ou seja, para exibir algo na tela
         PrintStream outputJogo = null;
         String escolha;
@@ -20,14 +21,8 @@ public class Cliente {
         Scanner tecladoEscolhaJogo = null; //Scanner para identificar qual tipo de jogo o User irá querer jogar
         Scanner sc = new Scanner(System.in);
 
-        final String IP = "127.0.0.1"; //ip do host pessoal
-        final int PORT = 12345; //porta do SERVER que quer se conectar
-        Socket socket; //usado do lado do cliente para se comunicar com o servidor
-
         //CRIAÇÃO DO SOCKET E PEDIDO DE CONEXÃO
-        //PRECISA DE DUAS INFORMAÇÕES:
-        //1->PORTA
-        //2->IP
+        //PRECISA DE DUAS INFORMAÇÕES: IP E PORTA
         try {
             socket = new Socket(IP, PORT); //passando IP e PORTA para o socket fazer a conexão com o SERVER
             outputJogo = new PrintStream(socket.getOutputStream()); //para dizer que essa variável vai enviar mensagens para o SERVER
@@ -38,16 +33,16 @@ public class Cliente {
             System.out.println("MENU");
             System.out.println("Qual tipo de jogo quer jogar?");
             System.out.println("Opções:");
-            //System.out.println("1) Jogador Vs CPU:");
-            //System.out.println("2) Jogador Vs Jogador");
             System.out.println("Escolha 1 caso queira jogar contra a CPU \nEscolha 2 caso vc queria jogar contra um adversário");
-            tecladoEscolhaJogo = new Scanner(System.in); //instanciando um novo Scanner para o usuário escolher
 
+            tecladoEscolhaJogo = new Scanner(System.in); //instanciando um novo Scanner para o usuário escolher
             escolha = tecladoEscolhaJogo.nextLine(); //escolha do tipo de jogo
-            while(!(escolha.equalsIgnoreCase("1") || escolha.equalsIgnoreCase("2"))){
-                System.out.println("Essa opção está indisponível, digite qualquer coisa para continuar: ");
-                escolha = tecladoEscolhaJogo.nextLine();
-            }
+
+                while(!(escolha.equalsIgnoreCase("1") || escolha.equalsIgnoreCase("2"))){
+                    System.out.println("Essa opção está indisponível, digite qualquer coisa para continuar: ");
+                    escolha = tecladoEscolhaJogo.nextLine();
+                }
+
             outputJogo.println(escolha); //para printar na tela do servidor quando capturar oq foi enviado a escolha do user
 
 
@@ -72,6 +67,12 @@ public class Cliente {
                 String msg;
                 System.out.println("Escolha Pedra(1), Papel(2) ou Tesoura(3): ");
                 msg = teclado.nextLine(); //ao invés de receber mensagem mandada pelo input eu crio um Scanner para ler oq foi digitado
+
+                    while (!((msg.equalsIgnoreCase("1")) || (msg.equalsIgnoreCase("2")) || (msg.equalsIgnoreCase("3")))){
+                        System.out.println("Opção invalida, tente novamente: ");
+                        msg = teclado.nextLine();
+                    }
+
                 output.println(msg); //system.out.println -> para exibir na tela do servidor
                 output.println(nome);
                 //while (!msg.equalsIgnoreCase("exit")); //para caso a mensagem seja === exit(desconsiderando maiusculas ou minusculas) ele finaliza a aplicação
@@ -85,6 +86,11 @@ public class Cliente {
                 String msg;
                 System.out.println("Escolha Pedra(1), Papel(2) ou Tesoura(3): ");
                 msg = teclado.nextLine(); //ao invés de receber mensagem mandada pelo input eu crio um Scanner para ler oq foi digitado
+
+                while (!((msg.equalsIgnoreCase("1")) || (msg.equalsIgnoreCase("2")) || (msg.equalsIgnoreCase("3")))){
+                    System.out.println("Opção invalida, tente novamente: ");
+                    msg = teclado.nextLine();
+                }
                 output.println(msg); //system.out.println -> para exibir na tela do servidor
                 output.println(nome);
 
@@ -95,6 +101,12 @@ public class Cliente {
                 String msg2;
                 System.out.println("Escolha Pedra(1), Papel(2) ou Tesoura(3): ");
                 msg2 = teclado.nextLine(); //ao invés de receber mensagem mandada pelo input eu crio um Scanner para ler oq foi digitado
+
+                while (!((msg2.equalsIgnoreCase("1")) || (msg2.equalsIgnoreCase("2")) || (msg2.equalsIgnoreCase("3")))){
+                    System.out.println("Opção invalida, tente novamente: ");
+                    msg2 = teclado.nextLine();
+                }
+
                 output.println(msg2); //system.out.println -> para exibir na tela do servidor
                 output.println(nome2);
 
